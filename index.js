@@ -13,7 +13,7 @@ function connectToDatabase() {
   con = mysql.createConnection(mysqlConfig);
   con.connect(function(err) {
     if (err) throw err;
-    res.send('connected')
+    console.log('connected')
   });
 }
 connectToDatabase();
