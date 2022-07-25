@@ -39,7 +39,7 @@ app.get('/create-table', function (req, res) {
       if (err) throw err;
       res.send("numbers table created");
     });
-  });
+  });connected
 })
 
 app.get('/insert', function (req, res) {
