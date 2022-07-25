@@ -7,23 +7,30 @@ const mysqlConfig = {
   password: "secret",
   database: "test_db"
 }
-
-let con = null
-
 const app = express()
+let con = null;
+function connectToDatabase() {
+  con = mysql.createConnection(mysqlConfig);
+  con.connect(function(err) {
+    if (err) throw err;
+    res.send('connected')
+  });
+}
+connectToDatabase();
+// const app = express()
 
 // respond with "hello world" when a GET request is made to the homepage
 app.get('/', function (req, res) {
   res.send('hello world')
 })
 
-app.get('/connect', function (req, res) {
-  con =  mysql.createConnection(mysqlConfig);
-  con.connect(function(err) {
-    if (err) throw err;
-    res.send('connected')
-  });
-})
+// app.get('/connect', function (req, res) {
+//   con =  mysql.createConnection(mysqlConfig);
+//   con.connect(function(err) {
+//     if (err) throw err;
+//     res.send('connected')
+//   });
+// })
 
 app.get('/create-table', function (req, res) {
   con.connect(function(err) {
