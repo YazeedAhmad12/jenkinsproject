@@ -37,7 +37,7 @@ jobs:
   Deployment:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: Git pull
         env:
           AWS_EC2_PEM: ${{ secrets.AWS_EC2_PEM  }}
