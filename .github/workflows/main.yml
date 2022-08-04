@@ -47,10 +47,7 @@ jobs:
          pwd
           echo "$AWS_EC2_PEM" > private_key && chmod 600 private_key
           ssh -o StrictHostKeyChecking=no -i private_key ${AWS_EC2_USERNAME}@${AWS_EC2_PUBLIC_IP} /bin/bash <<'EOT'
-            cd /home/ec2-user/app
-            git init &&
-            git pull https://github.com/YazeedAhmad12/jenkinsproject.git &&
-            
+            cd /home/ec2-user/app &&
             docker-compose up -d --build
 
          EOT
