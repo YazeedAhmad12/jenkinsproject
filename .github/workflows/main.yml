@@ -50,6 +50,7 @@ jobs:
             cd /home/ec2-user/app &&
             git config --global user.name "YazeedAhmad12"
             git config --global user.email Yazeed.Mhajnah@sociumtech.com
+            git remote add origin https://YazeedAhmad12:Yazeedahmad22@github.com/YazeedAhmad12/jenkinsproject
             git pull https://github.com/YazeedAhmad12/jenkinsproject.git
             docker-compose down &&
             docker-compose build &&
