@@ -1,5 +1,5 @@
 const express = require('express')
-const mysql = require('mysql');
+const mysql = require('mysql2');
 
 const mysqlConfig = {
   host: "mysql_server",
@@ -75,5 +75,5 @@ app.get('/fetch', function (req, res) {
 
 app.listen(3000)
 
-console.log("listening on port 3000")
+// console.log("listening on port 3000")
 
