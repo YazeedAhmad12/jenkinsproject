@@ -6,6 +6,8 @@ COPY package.json .
 
 RUN npm install
 
+RUN npm install mysql2
+
 COPY . .
 
 EXPOSE 3000
