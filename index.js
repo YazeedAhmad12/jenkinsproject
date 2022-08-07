@@ -9,8 +9,8 @@ const mysqlConfig = {
 }
 
 async function sleep(ms) {
-  return await setTimeout(()=>{} , ms);
-  console.log("before")
+  await setTimeout(()=>{console.log("before")} , ms);
+  
 }
 
 sleep(20000)
