@@ -9,11 +9,11 @@ const mysqlConfig = {
 }
 
 async function sleep(ms) {
-  await setTimeout(()=>{console.log("before")} , ms);
+  await setTimeout(connectToDatabase , ms);
   
 }
 
-sleep(20000)
+sleep(3000)
 console.log("after")
 const app = express()
 let con = null;
@@ -24,7 +24,7 @@ function connectToDatabase() {
     console.log('connected')
   });
 }
-connectToDatabase();
+// connectToDatabase();
 // const app = express()
 
 // respond with "hello world" when a GET request is made to the homepage
