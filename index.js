@@ -10,9 +10,11 @@ const mysqlConfig = {
 
 async function sleep(ms) {
   return await setTimeout(()=>{} , ms);
+  console.log("before")
 }
 
 sleep(20000)
+console.log("after")
 const app = express()
 let con = null;
 function connectToDatabase() {
