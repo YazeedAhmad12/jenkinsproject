@@ -22,7 +22,7 @@ connectToDatabase();
 
 // respond with "hello world" when a GET request is made to the homepage
 app.get('/', function (req, res) {
-  res.send('github actions success')
+  res.send('github actions v2 success')
 })
 
 // app.get('/connect', function (req, res) {
