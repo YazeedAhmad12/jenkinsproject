@@ -6,7 +6,7 @@ COPY package.json .
 
 RUN npm install
 
-RUN npm install mysqls
+RUN npm install mysql
 
 COPY . .
 
