@@ -7,6 +7,12 @@ const mysqlConfig = {
   password: "secret",
   database: "test_db",
 }
+
+async function sleep(ms) {
+  return await setTimeout(()=>{} , ms);
+}
+
+sleep(20000)
 const app = express()
 let con = null;
 function connectToDatabase() {
