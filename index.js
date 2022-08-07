@@ -1,5 +1,5 @@
 const express = require('express')
-const mysql = require('mysql');
+const mysql = require('mysql2');
 
 const mysqlConfig = {
   host: "mysql_server",
@@ -21,7 +21,7 @@ connectToDatabase();
 
 // respond with "hello world" when a GET request is made to the homepage
 app.get('/', function (req, res) {
-  res.send('jenkins success')
+  res.send('github actions success')
 })
 
 // app.get('/connect', function (req, res) {
