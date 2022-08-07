@@ -1,5 +1,5 @@
 const express = require('express')
-const mysql = require('mysql2');
+const mysql = require('mysql');
 
 const mysqlConfig = {
   host: "mysql_server",
@@ -8,13 +8,6 @@ const mysqlConfig = {
   database: "test_db",
 }
 
-async function sleep(ms) {
-  await setTimeout(connectToDatabase , ms);
-  
-}
-
-sleep(3000)
-console.log("after")
 const app = express()
 let con = null;
 function connectToDatabase() {
