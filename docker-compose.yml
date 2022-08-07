@@ -16,8 +16,7 @@ services:
       context: .
       dockerfile: Dockerfile
     ports: 
-      - 3000:3000
-    command: bash -c 'while !</dev/tcp/mysql_server/3306; do sleep 1; done; npm start'  
+      - 3000:3000 
     volumes: 
       - .:/app
       - '/app/node_modules'

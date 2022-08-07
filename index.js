@@ -5,7 +5,7 @@ const mysqlConfig = {
   host: "mysql_server",
   user: "dan",
   password: "secret",
-  database: "test_db",
+  database: "test_db"
 }
 const app = express()
 let con = null;
