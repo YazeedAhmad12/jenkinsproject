@@ -50,7 +50,7 @@ jobs:
             git clone git@github.com:YazeedAhmad12/jenkinsproject.git
             cd /home/ec2-user/app/jenkinsproject && 
             git pull git@github.com:YazeedAhmad12/jenkinsproject.git
-            docker-compose down
+            docker-compose down -v
             docker-compose build --no-cache
             docker-compose up -d
            
