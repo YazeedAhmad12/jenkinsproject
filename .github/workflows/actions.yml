@@ -31,7 +31,7 @@ jobs:
           password: ${{ secrets.DOCKER_HUB_ACCESS_TOEKN }}
           context: .
           push: true
-          tags: github_actions_image:${{ github.run_number }}
+          tags: ${{ secrets.DOCKER_USERNAME }}/github_actions_image:${{ github.run_number }}
           # labels: ${{ steps.meta.outputs.labels }}###
 
   # Deployment:
