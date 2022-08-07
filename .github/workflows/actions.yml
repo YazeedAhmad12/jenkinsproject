@@ -33,26 +33,26 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
           context: .
           push: true
-          tags: github_actions_image:${{ github.run_number }}
+          tags: github_actions_image/nodeapp:${{ github.run_number }}
           # labels: ${{ steps.meta.outputs.labels }}
 
-  Deployment:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: Docker Deploy
-        env:
-          AWS_EC2_PEM: ${{ secrets.AWS_EC2_PEM  }}
-          AWS_EC2_PUBLIC_IP: ${{ secrets.AWS_EC2_PUBLIC_IP  }}
-          AWS_EC2_USERNAME: ${{ secrets.AWS_EC2_USERNAME  }}
-        run: |
-          echo "$AWS_EC2_PEM" > private_key && chmod 600 private_key
-          ssh -o StrictHostKeyChecking=no -i private_key ${AWS_EC2_USERNAME}@${AWS_EC2_PUBLIC_IP} /bin/bash <<'EOT'
-            cd /home/ec2-user/app &&
-            git clone git@github.com:YazeedAhmad12/jenkinsproject.git
-            cd /home/ec2-user/app/jenkinsproject && 
-            git pull git@github.com:YazeedAhmad12/jenkinsproject.git
-            docker-compose build --no-cache
-            docker-compose up -d
+  # Deployment:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v2
+  #     - name: Docker Deploy
+  #       env:
+  #         AWS_EC2_PEM: ${{ secrets.AWS_EC2_PEM  }}
+  #         AWS_EC2_PUBLIC_IP: ${{ secrets.AWS_EC2_PUBLIC_IP  }}
+  #         AWS_EC2_USERNAME: ${{ secrets.AWS_EC2_USERNAME  }}
+  #       run: |
+  #         echo "$AWS_EC2_PEM" > private_key && chmod 600 private_key
+  #         ssh -o StrictHostKeyChecking=no -i private_key ${AWS_EC2_USERNAME}@${AWS_EC2_PUBLIC_IP} /bin/bash <<'EOT'
+  #           cd /home/ec2-user/app &&
+  #           git clone git@github.com:YazeedAhmad12/jenkinsproject.git
+  #           cd /home/ec2-user/app/jenkinsproject && 
+  #           git pull git@github.com:YazeedAhmad12/jenkinsproject.git
+  #           docker-compose build --no-cache
+  #           docker-compose up -d
            
-          EOT
+  #         EOT
