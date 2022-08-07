@@ -34,7 +34,7 @@ jobs:
           context: .
           push: true
           tags: github_actions_image/nodeapp:${{ github.run_number }}
-          # labels: ${{ steps.meta.outputs.labels }}
+          # labels: ${{ steps.meta.outputs.labels }}###
 
   # Deployment:
   #   runs-on: ubuntu-latest
